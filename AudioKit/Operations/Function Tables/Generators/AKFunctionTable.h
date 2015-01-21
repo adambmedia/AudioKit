@@ -43,10 +43,13 @@
 - (instancetype)initWithType:(AKFunctionTableType)functionTableType
                   parameters:(AKArray *)parameters;
 
-
 /// Creates a function table without specifying a size or parameters.
 /// @param functionTableType  One of the supported GeneratingRoutines.
 - (instancetype)initWithType:(AKFunctionTableType)functionTableType;
+
+/// Creates a function table from an existing function table.
+/// @param functionTable Function table copy from existing function table
+- (instancetype)initWithFunctionTable:(AKFunctionTable *)functionTable;
 
 // The textual representation of the dynamic function table for Csound
 - (NSString *)stringForCSD;

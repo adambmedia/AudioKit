@@ -41,6 +41,26 @@
     return [self initWithType:functionTableType size:0 parameters:parameters];
 }
 
+- (instancetype)initWithFunctionTable:(AKFunctionTable *)functionTable
+{
+    AKFunctionTableType type = functionTable->igen;
+    AKArray *parametersCopy = [[AKArray alloc] init];
+
+    //fails because [functionTable.parameters.constancs count] is null if the functiontable was a child of the parent, AKFunctionTable
+    //parameters doesnt get set directly on the creation of a child function table
+    //therefore, in an instrument code such as the following cannot work:
+    // AKFunctionTable *lineSegmentCopy = [AKFunctionTable alloc] initWithFunctionTable:myLineSegmentTable];
+    NSLog(@"constants count: %lu", [functionTable.parameters.constants count]);
+
+    for (uint i=0; i<[functionTable.parameters.constants count];i++) {
+        [parametersCopy addConstant: [functionTable.parameters.constants objectAtIndex:i]];
+    }
+    
+    return [self initWithType:type
+                         size:functionTable.size
+                   parameters:parametersCopy];
+}
+
 - (NSString *)functionName
 {
     NSString *functionName = [NSString stringWithFormat:@"%@", [self class]];
