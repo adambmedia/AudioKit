@@ -28,6 +28,10 @@
 - (void)addSinusoidWithPartialNumber:(float)partialNumber
                             strength:(float)partialStrength;
 
+/// Create composite waveform from an NSArray of partial strengths.  Index in array indicates partial number.
+/// @param partialArray NSArray containing NSNumbers of partial strengths for the composite waveform.
+- (instancetype)initFromPartialArray:(NSArray *)partialArray;
+
 /// Add a sinusoid.  Partials may be in any order.
 /// @param partialNumber Partial number (relative to a fundamental that would occupy size locations per cycle) of sinusod. Must be positive, but need not be a whole number, i.e., non-harmonic partials are permitted.
 /// @param strength Relative strength of the partial, since the composite waveform may be rescaled later. Negative values are permitted and imply a 180 degree phase shift.
@@ -37,6 +41,5 @@
                             strength:(float)strength
                                phase:(float)phase
                             dcOffset:(float)dcOffset;
-
 
 @end

@@ -47,6 +47,18 @@
     [self addSinusoidWithPartialNumber:partialNumber strength:strength phase:0 dcOffset:0];
 }
 
+- (instancetype)initFromPartialArray:(NSArray *)partialArray
+{
+    self = [self init];
+    if(self) {
+        int i=0;
+        for (NSNumber *partialStrength in partialArray) {
+            [self addSinusoidWithPartialNumber:i strength:[partialStrength floatValue]];
+            i++;
+        }
+    }
+    return self;
+}
 
 - (void)addSinusoidWithPartialNumber:(int)partialNumber
                             strength:(float)strength
