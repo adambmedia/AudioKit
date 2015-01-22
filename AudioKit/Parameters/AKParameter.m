@@ -198,5 +198,12 @@ static int currentID = 1;
     return new;
 }
 
+- (instancetype)toAbsoluteValue
+{
+    AKParameter *new = [[AKParameter alloc] init];
+    [new setParameterString:[NSString stringWithFormat:@"abs(%@)", self.parameterString]];
+    return new;
+}
+
 
 @end

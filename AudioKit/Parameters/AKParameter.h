@@ -144,4 +144,7 @@
 /// Helper fucntion to convert logarithmic full scale decibel values to properly scaled amplitude
 - (instancetype)amplitudeFromFullScaleDecibel;
 
+/// Helper function to return absolute value of parameter.
+- (instancetype)toAbsoluteValue;
+
 @end
