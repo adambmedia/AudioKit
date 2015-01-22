@@ -147,4 +147,7 @@
 /// Helper function to return absolute value of parameter.
 - (instancetype)toAbsoluteValue;
 
+/// Helper function to return fractional part of parameter.
+- (instancetype)toFractionalPart;
+
 @end

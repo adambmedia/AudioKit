@@ -205,5 +205,12 @@ static int currentID = 1;
     return new;
 }
 
+- (instancetype)toFractionalPart
+{
+    AKParameter *new = [[AKParameter alloc] init];
+    [new setParameterString:[NSString stringWithFormat:@"frac(%@)", self.parameterString]];
+    return new;
+}
+
 
 @end
