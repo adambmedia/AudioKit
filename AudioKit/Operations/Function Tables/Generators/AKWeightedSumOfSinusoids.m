@@ -53,7 +53,7 @@
     if(self) {
         int i=0;
         for (NSNumber *partialStrength in partialArray) {
-            [self addSinusoidWithPartialNumber:i strength:[partialStrength floatValue]];
+            [self addSinusoidWithPartialNumber:(i+1) strength:[partialStrength floatValue]];
             i++;
         }
     }
