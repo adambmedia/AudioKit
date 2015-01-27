@@ -69,7 +69,6 @@
                            [NSNumber numberWithFloat:strength],
                            [NSNumber numberWithFloat:phase],
                            [NSNumber numberWithFloat:dcOffset]]];
-    
 }
 
 // Csound Prototype: ifno ftgen ip1, ip2dummy, isize, igen, iarga, iargb, ...
