@@ -58,9 +58,9 @@
     NSMutableString *csdString = [[NSMutableString alloc] init];
     
     if(!_seed) {
-        [csdString appendFormat:@"seed 0"];
+        [csdString appendFormat:@"seed 0\n"];
     } else {
-        [csdString appendFormat:@"seed %@", _seed];
+        [csdString appendFormat:@"seed %@\n", _seed];
     }
     
     [csdString appendFormat:@"%@ random ", self];
