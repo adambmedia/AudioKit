@@ -21,6 +21,7 @@
     if (self) {
         _lowerBound = lowerBound;
         _upperBound = upperBound;
+        _seed = akpi(0);
     }
     return self;
 }
@@ -32,6 +33,7 @@
         // Default Values
         _lowerBound = akp(0);
         _upperBound = akp(1);
+        _seed = akpi(0);
     }
     return self;
 }
@@ -48,9 +50,19 @@
     _upperBound = upperBound;
 }
 
+- (void)setOptionalSeedValue:(AKParameter *)seedValue {
+    _seed = seedValue;
+}
+
 - (NSString *)stringForCSD {
     NSMutableString *csdString = [[NSMutableString alloc] init];
-
+    
+    if(!_seed) {
+        [csdString appendFormat:@"seed 0"];
+    } else {
+        [csdString appendFormat:@"seed %@", _seed];
+    }
+    
     [csdString appendFormat:@"%@ random ", self];
 
     if ([_lowerBound class] == [AKControl class]) {

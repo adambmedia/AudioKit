@@ -42,6 +42,11 @@
 /// @param upperBound Maximum range limit. Updated at Control-rate. [Default Value: 1]
 - (void)setOptionalUpperBound:(AKParameter *)upperBound;
 
+/// Seed for random number generator. [Default: 0, randomized by system clock]
+@property AKParameter *seed;
 
+/// Set an optional global seed value
+/// @param seed Global seed value, shared amongst all instances of AudioKit random number generators. Must be between 0 and 2^32. Yields the same values on each instantiation of an instrument.  seedValue is set to 0 if using optional system clock.
+- (void)setOptionalSeedValue:(AKParameter *)seedValue;
 
 @end
