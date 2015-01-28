@@ -20,8 +20,8 @@
 }
 
 - (instancetype)initWithOutput:(AKParameter *)output
-                   ifParameter:(AKParameter *)reference
-                    isLessThan:(AKParameter *)comparison
+                    ifConstant:(AKConstant *)reference
+                    isLessThan:(AKConstant *)comparison
                  trueCondition:(AKParameter *)thenAssign
                 falseCondition:(AKParameter *)elseAssign
 {
@@ -39,8 +39,8 @@
 }
 
 - (instancetype)initWithOutput:(AKParameter *)output
-                   ifParameter:(AKParameter *)reference
-                 isGreaterThan:(AKParameter *)comparison
+                    ifConstant:(AKConstant *)reference
+                 isGreaterThan:(AKConstant *)comparison
                  trueCondition:(AKParameter *)thenAssign
                 falseCondition:(AKParameter *)elseAssign
 {
@@ -80,6 +80,7 @@
         default:
             break;
     }
+    
     return [NSString stringWithFormat:@"%@ = (%@ %@ %@ ? %@ : %@)",
             lhs, ref, op, comp, assignTrue, assignFalse];
 }

@@ -19,9 +19,19 @@
 - (instancetype)initWithOutput:(AKParameter *)output
                          input:(AKParameter *)input;
 
+/// Initialization Statement for constant arguments with both sides
+/// @param output The left side of the equal sign.
+/// @param input The right side of the equal sign.
+- (instancetype)initWithConstantOutput:(AKConstant *)output
+                                 input:(AKConstant *)input;
+
 /// Initialization Statement
 /// @param input The right side of the equal sign.
 - (instancetype)initWithInput:(AKParameter *)input;
+
+/// Initiazliation Statement
+/// @param input The Constant right side of the equal sign.
+- (instancetype)initWithConstantInput:(AKConstant *)input;
 
 
 @end

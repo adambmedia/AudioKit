@@ -19,26 +19,26 @@ typedef NS_ENUM(NSInteger, AKTernaryRelationalOperatorType) {
 @interface AKTernaryAssignment : AKParameter
 
 /// Initialization Statement with "less than" relational operator.
-/// @param output The Parameter to set equal to the result of the conditional evaluation.
+/// @param output The Parameter to set equal to the result of the conditional evaluation. Must have type agreement between true/false condition and output.
 /// @param reference The left side of the relational operator.
 /// @param comparison The Parameter to compare with the reference.
 /// @param thenAssign The Parameter to assign if the expression is true.
 /// @param elseAssign The Parameter to assign if the expression is false.
 - (instancetype)initWithOutput:(AKParameter *)output
-                   ifParameter:(AKParameter *)reference
-                    isLessThan:(AKParameter *)comparison
+                    ifConstant:(AKConstant *)reference
+                    isLessThan:(AKConstant *)comparison
                  trueCondition:(AKParameter *)thenAssign
                 falseCondition:(AKParameter *)elseAssign;
 
 /// Initialization Statement with "greater than" relational operator.
-/// @param output The Parameter to set equal to the result of the conditional evaluation.
+/// @param output The Parameter to set equal to the result of the conditional evaluation. Must have type agreement between true/false condition and output.
 /// @param reference The left side of the relational operator.
 /// @param comparison The Parameter to compare with the reference.
 /// @param thenAssign The Parameter to assign if the expression is true.
 /// @param elseAssign The Parameter to assign if the expression is false.
 - (instancetype)initWithOutput:(AKParameter *)output
-            ifParameter:(AKParameter *)reference
-                 isGreaterThan:(AKParameter *)comparison
+                    ifConstant:(AKConstant *)reference
+                 isGreaterThan:(AKConstant *)comparison
                  trueCondition:(AKParameter *)thenAssign
                 falseCondition:(AKParameter *)elseAssign;
 
