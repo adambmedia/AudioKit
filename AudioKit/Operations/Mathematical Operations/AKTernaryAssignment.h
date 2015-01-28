@@ -28,7 +28,7 @@ typedef NS_ENUM(NSInteger, AKTernaryRelationalOperatorType) {
                    ifParameter:(AKParameter *)reference
                     isLessThan:(AKParameter *)comparison
                  trueCondition:(AKParameter *)thenAssign
-                          else:(AKParameter *)elseAssign;
+                falseCondition:(AKParameter *)elseAssign;
 
 /// Initialization Statement with "greater than" relational operator.
 /// @param output The Parameter to set equal to the result of the conditional evaluation.
@@ -40,6 +40,6 @@ typedef NS_ENUM(NSInteger, AKTernaryRelationalOperatorType) {
             ifParameter:(AKParameter *)reference
                  isGreaterThan:(AKParameter *)comparison
                  trueCondition:(AKParameter *)thenAssign
-                          else:(AKParameter *)elseAssign;
+                falseCondition:(AKParameter *)elseAssign;
 
 @end

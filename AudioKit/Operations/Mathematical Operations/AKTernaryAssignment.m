@@ -23,7 +23,7 @@
                    ifParameter:(AKParameter *)reference
                     isLessThan:(AKParameter *)comparison
                  trueCondition:(AKParameter *)thenAssign
-                          else:(AKParameter *)elseAssign
+                falseCondition:(AKParameter *)elseAssign
 {
     self = [super initWithString:[self operationName]];
     if(self) {
@@ -42,7 +42,7 @@
                    ifParameter:(AKParameter *)reference
                  isGreaterThan:(AKParameter *)comparison
                  trueCondition:(AKParameter *)thenAssign
-                          else:(AKParameter *)elseAssign
+                falseCondition:(AKParameter *)elseAssign
 {
     self = [super initWithString:[self operationName]];
     if(self) {
