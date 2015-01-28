@@ -1,14 +1,14 @@
 //
-//  TernaryAssignment.m
+//  AKTernaryAssignment.m
 //  FirstPhrases
 //
 //  Created by Adam Boulanger on 1/28/15.
 //  Copyright (c) 2015 fxpal. All rights reserved.
 //
 
-#import "TernaryAssignment.h"
+#import "AKTernaryAssignment.h"
 
-@implementation TernaryAssignment
+@implementation AKTernaryAssignment
 {
     AKTernaryRelationalOperatorType relationalOperator;
     AKParameter *lhs;

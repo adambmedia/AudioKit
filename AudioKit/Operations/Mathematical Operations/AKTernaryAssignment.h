@@ -1,5 +1,5 @@
 //
-//  TernaryAssignment.h
+//  AKTernaryAssignment.h
 //  FirstPhrases
 //
 //  Created by Adam Boulanger on 1/28/15.
@@ -9,14 +9,14 @@
 #import "AKParameter+Operation.h"
 
 typedef NS_ENUM(NSInteger, AKTernaryRelationalOperatorType) {
-  AKTernaryRelationalOperatorTypeLessThan=1,
+    AKTernaryRelationalOperatorTypeLessThan=1,
     AKTernaryRelationalOperatorTypeLessThanOrEqual=2,
     AKTernaryRelationalOperatorTypeGreaterThan=3,
     AKTernaryRelationalOperatorTypeGreaterThanOrEqual=4,
     AKTernaryRelationalOperatorTypeEqual=5
 };
 
-@interface TernaryAssignment : AKParameter
+@interface AKTernaryAssignment : AKParameter
 
 /// Initialization Statement with "less than" relational operator.
 /// @param output The Parameter to set equal to the result of the conditional evaluation.
@@ -26,9 +26,9 @@ typedef NS_ENUM(NSInteger, AKTernaryRelationalOperatorType) {
 /// @param elseAssign The Parameter to assign if the expression is false.
 - (instancetype)initWithOutput:(AKParameter *)output
                    ifParameter:(AKParameter *)reference
-                       isLessThan:(AKParameter *)comparison
-                    trueCondition:(AKParameter *)thenAssign
-                             else:(AKParameter *)elseAssign;
+                    isLessThan:(AKParameter *)comparison
+                 trueCondition:(AKParameter *)thenAssign
+                          else:(AKParameter *)elseAssign;
 
 /// Initialization Statement with "greater than" relational operator.
 /// @param output The Parameter to set equal to the result of the conditional evaluation.
@@ -37,9 +37,9 @@ typedef NS_ENUM(NSInteger, AKTernaryRelationalOperatorType) {
 /// @param thenAssign The Parameter to assign if the expression is true.
 /// @param elseAssign The Parameter to assign if the expression is false.
 - (instancetype)initWithOutput:(AKParameter *)output
-                   ifParameter:(AKParameter *)reference
-                    isGreaterThan:(AKParameter *)comparison
-                    trueCondition:(AKParameter *)thenAssign
-                             else:(AKParameter *)elseAssign;
+            ifParameter:(AKParameter *)reference
+                 isGreaterThan:(AKParameter *)comparison
+                 trueCondition:(AKParameter *)thenAssign
+                          else:(AKParameter *)elseAssign;
 
 @end
