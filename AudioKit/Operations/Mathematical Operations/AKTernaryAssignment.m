@@ -80,9 +80,8 @@
         default:
             break;
     }
-    return [NSString stringWithFormat:
-            @"%@ = (%@%@%@ ? %@ : %@)",
-            self, ref, op, comp, assignTrue, assignFalse];
+    return [NSString stringWithFormat:@"%@ = (%@ %@ %@ ? %@ : %@)",
+            lhs, ref, op, comp, assignTrue, assignFalse];
 }
 
 - (NSString *)description {
