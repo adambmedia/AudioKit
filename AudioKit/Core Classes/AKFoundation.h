@@ -63,6 +63,7 @@
 // Operations - Mathematical Operations
 #import "AKAssignment.h"
 #import "AKScaledControl.h"
+#import "AKTernaryAssignment.h"
 
 // Operations - Mathematical Operations - Mininum and Maximum
 #import "AKMaxAudio.h"

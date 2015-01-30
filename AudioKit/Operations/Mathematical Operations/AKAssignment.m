@@ -12,6 +12,9 @@
 {
     AKParameter *lhs;
     AKParameter *rhs;
+    
+    AKConstant *lhsConstant;
+    AKConstant *rhsConstant;
 }
 
 - (instancetype)initWithOutput:(AKParameter *)output
@@ -25,23 +28,55 @@
     return self; 
 }
 
+- (instancetype)initWithConstantOutput:(AKConstant *)output input:(AKConstant *)input {
+    self = [super initWithString:[self operationName]];
+    
+    if(self) {
+        lhsConstant = output;
+        rhsConstant = input;
+    }
+    return self;
+}
+
 - (instancetype)initWithInput:(AKParameter *)input {
     self = [super initWithString:[self operationName]];
     
     if (self) {
-        lhs = [AKParameter parameterWithString:[self operationName]];
+
         rhs = input;
+        lhs = [AKParameter parameterWithString:[self operationName]];
+
+    }
+    return self;
+}
+
+- (instancetype)initWithConstantInput:(AKConstant *)input
+{
+    self = [super initWithString:[self operationName]];
+    
+    if(self) {
+        lhsConstant = [AKConstant parameterWithString:[self operationName]];
+        rhsConstant = input;
     }
     return self;
 }
 
 - (NSString *)stringForCSD
 {
-    return [NSString stringWithFormat:@"%@ = %@", lhs, rhs];
+    if (lhs) {
+        return [NSString stringWithFormat:@"%@ = %@", lhs, rhs];
+    } else {
+        return [NSString stringWithFormat:@"%@ = %@", lhsConstant, rhsConstant];
+    }
 }
 
 - (NSString *)description {
-    return [lhs parameterString];
+    
+    if (lhs) {
+        return [lhs parameterString];
+    } else {
+        return [lhsConstant parameterString];
+    }
 }
 
 @end
