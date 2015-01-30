@@ -437,7 +437,6 @@ OSStatus  Csound_Render(void *inRefCon,
         CSOUND *cs;
         
         cs = csoundCreate(NULL);
-        
         csoundSetMessageCallback(cs, messageCallback);
         csoundSetHostData(cs, (__bridge void *)(self));
         
